@@ -21,6 +21,10 @@ add_library(alertas_lib
 target_include_directories(alertas_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(alertas_lib PUBLIC projeto_flags)
 
+# Executável principal.
+add_executable(central_alertas main.cpp)
+target_link_libraries(central_alertas PRIVATE alertas_lib)
+
 # ---- Testes com Catch2 (baixado via FetchContent) ----
 include(FetchContent)
 FetchContent_Declare(
