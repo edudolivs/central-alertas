@@ -16,6 +16,7 @@ add_library(alertas_lib
     alertas/alerta_critico.cpp
     alertas/alerta_aviso.cpp
     alertas/alerta_info.cpp
+    central.cpp
 )
 target_include_directories(alertas_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 target_link_libraries(alertas_lib PUBLIC projeto_flags)
@@ -33,6 +34,7 @@ enable_testing()
 add_executable(tests
     tests/test_alerta.cpp
     tests/test_alertas_concretos.cpp
+    tests/test_central.cpp
 )
 target_link_libraries(tests PRIVATE alertas_lib Catch2::Catch2WithMain)
 
